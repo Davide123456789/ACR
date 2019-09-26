@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="menu" id="mainMenu">
+      <ul>
+        <li><a href="index.html" class="menu-item">GET </a></li>
+        <li><a href="set.html" class="menu-item">SET </a></li>
+        <li><a href="create.html" class="menu-item">Create / remove </a></li>
+        <li><a href="classes.html" class="menu-item">Style classes </a></li>
+        <li><a href="events.html" class="menu-item">Events </a></li>
+        <li><a href="exercises.html" class="menu-item">Exercises </a></li>
+        <li><a href="#" class="menu-item">DOM </a></li>
+      </ul>
+    </div>
+
+    <h2 id="header">DOM Exercises </h2>
+
+    <div class="spaced">
+      <input type="text" id="name"/>
+      <button id="btn1">Show .value in console!</button>
+    </div>
+
+    <div id="nameList" class="spaced">
+      <input type="text" id="name2"/>
+      <button id="btn2">Add to Names list</button>
+      <h2 id="namesHeader">Names:</h2>
+      <ul>
+        <li>Gonçalo</li>
+      </ul>
+    </div>
+
+    <span id="result">Result: </span>
+
+    <script>
+      // mudar color namesHeader
+      document.getElementById("namesHeader").style.color='blue';
+
+      // mudar class
+      document.getElementById("mainMenu").className='menu-clear';
+
+      //criar um parágrafo
+      var para = document.createElement("P");                 
+      para.innerHTML = "Added paragraph text.";                
+      document.querySelector("body").appendChild(para);
+
+      //Adiciona	à	span	result	todos	os elementos
+      const queryAll = document.querySelectorAll(".menu-item"); 
+      console.log(queryAll);
+      const result = document.getElementById("result");
+      queryAll.forEach(function(element) {
+        result.appendChild(element);
+      });
+      
+      //botão 1º 
+      var btn1 = document.getElementById('btn1');
+      btn1.addEventListener('click', function(ev) {
+      
+      });
+
+    //botão 2º
+
+    </script>
+
+  </body>
+</html>

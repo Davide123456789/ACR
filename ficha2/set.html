@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">DOM </a></li>
+      </ul>
+    </div>
+
+    <h2 id="header">SET - DOM</h2>
+
+    <p id="text1">texto exemplo</p>
+
+    <p id="text2">texto 2 original</p>
+
+    <div id="div1" class="my-div">my div</div>
+
+    <ul>
+      <li>
+        <a id="myLink" href="//uma.pt" target="_blank">UMa</a>
+      </li>
+      <li>
+        <a id="myLink2" href="//uma.pt" target="_blank">UMa 2</a>
+      </li>
+    </ul>
+
+    <script>
+    // SETS
+    // texto de p
+    console.log(document.getElementById("text2").textContent);
+    document.getElementById("text2").textContent = "novo texto alterado "; // ou (em vez de textContent) usar innerHTML = '<span>Hello World!</span>'
+
+    // href e texto de link
+    console.log('link1 href original: ' + document.getElementById("myLink").href);
+    console.log('link1 texto original: ' + document.getElementById("myLink").innerHTML);
+    const vLink = document.getElementById("myLink");
+    vLink.href="//visitmadeira.pt/";
+    vLink.textContent="MADEIRA TURISMO";
+
+    // href e texto de link2, setAttribute
+    const vLink2 = document.getElementById("myLink2");
+    vLink2.setAttribute('href', "//visitmadeira.pt/");
+    vLink2.textContent='setAttribute example';
+
+    // mudar class
+    document.getElementById("div1").style.color='#ccc';
+
+    vLink2.setAttribute('id', 'newId');
+    </script>
+
+  </body>
+</html>

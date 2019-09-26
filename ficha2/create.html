@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">DOM </a></li>
+      </ul>
+    </div>
+
+    <h2 id="header">CREATE / Remove - DOM</h2>
+
+    <p id="text1">texto exemplo</p>
+
+    <p id="text2">texto 2 original</p>
+
+    <div class="my-div">my div</div>
+
+    <ul id="links">
+      <li>
+        <a id="myLink" href="//uma.pt" target="_blank">UMa</a>
+      </li>
+      <li>
+        <a id="myLink2" href="//uma.pt" target="_blank">UMa 2</a>
+      </li>
+    </ul>
+
+    <script>
+    // CREATE
+    const newDiv = document.createElement('div'); // só cria, nao adiciona
+    newDiv.textContent = 'This is the glorious text-content!';
+    // append
+    document.querySelector(".my-div").appendChild(newDiv);
+
+    // REMOVE
+    var links = document.getElementById("links");
+    links.removeChild(links.children[0]); // ou firstElementChild. childNodes[0] e firstChild detectam o HTML todo em vez elemento(s)
+
+    // remove attribute
+    document.getElementById("myLink2").removeAttribute('target');
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ACR</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">DOM </a></li>
+      </ul>
+    </div>
+
+    <h2 id="section">GET - DOM</h2>
+
+    <p id="p1">texto 1</p>
+    <p id="p2">texto 2</p>
+
+    <div class="my-div">my div</div>
+    <div class="my-div">my div2</div>
+
+    <div id="container">
+      <div class="display"></div>
+      <div class="controls"></div>
+    </div>
+
+    <script>
+    // GETS
+    // by ID
+    const mySection = document.getElementById("section");
+    console.log(mySection.textContent);
+
+    // by tag name (element)
+    const allParagraphs = document.getElementsByTagName("p"); // array com todos os elementos p
+    const firstP = allParagraphs[0];
+    console.log('1o <p>: ' + firstP.innerHTML);
+
+    // all by class
+    const allByClass = document.getElementsByClassName("my-div"); // todos os elementos com a class
+    console.log(allByClass[0].textContent);
+
+
+    // attribute
+    console.log('id do 1o <p>: ' + firstP.getAttribute('id'));
+
+
+    // by query: element, id, class. querySelector is not live: doesn't update
+    const queryFirst = document.querySelector("div.my-div"); // get first
+    console.log(queryFirst.textContent);
+    // ex: myElement.querySelector('input[type="submit"]')
+
+    // by query all
+    const queryAll = document.querySelectorAll("div.my-div"); // retorna nodeList, parecido ao array mas sem alguns metodos, pode ser convertido para array
+    console.log(queryAll[1].textContent);
+
+    // selectors
+    const selectors = document.querySelector('#container > .display');
+    console.dir(selectors);
+    </script>
+
+  </body>
+</html>

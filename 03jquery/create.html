@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">jQuery </a></li>
+      </ul> 
+    </div> 
+
+    <h2 id="header">CREATE / Remove - jQuery</h2>
+    
+    <p id="text1">texto exemplo</p>
+
+    <p id="text2">texto 2 original</p>
+
+    <div class="my-div">my div</div>
+
+    <ul id="links">
+      <li>
+        <a id="myLink" href="//uma.pt" target="_blank">UMa</a>
+      </li>
+      <li>
+        <a id="myLink2" href="//uma.pt" target="_blank">UMa 2</a>
+      </li>
+    </ul> 
+  
+    <script>
+    $(document).ready(function(){
+      // CREATE
+      var newDiv = "<div>This is the glorious text-content!</div>";               // Create element with HTML  
+      var newDiv2 = $("<div></div>").text("This is the glorious text-content!");   // Create with jQuery
+      // append
+      $(".my-div").append(newDiv2); 
+
+      // REMOVE
+      $("#links").remove('myLink'); 
+
+      // remove attribute
+      $("#myLink2").removeAttr('target'); 
+    });
+    </script>
+
+  </body>
+</html>

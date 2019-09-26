@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">jQuery </a></li>
+      </ul>
+    </div>
+
+    <h2 id="header">EVENTS - jQuery</h2>
+
+    <p id="text1">texto exemplo</p>
+
+    <p id="text2">texto 2 original</p>
+
+    <div class="my-div">my div</div>
+
+    <ul id="btns">
+      <li>
+        <button id="myBtn2">Click me (jquery)</button>
+      </li>
+      <li>
+        <button id="myBtn3">Click me 3</button>
+      </li>
+    </ul>
+
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      // EVENTS
+      $("#myBtn2").click(function(e){
+        console.log("Hello World from btn2");
+        $(this).css("background", "yellow"); // $(this) = $("#myBtn2")
+        //e.target.style.background = 'yellow'; // alt using DOM
+      });
+
+
+      $("#myBtn3").on({
+          mouseenter: function(){
+              $(this).css("background-color", "lightgray");
+          },
+          mouseleave: function(){
+              $(this).css("background-color", "lightblue");
+          },
+          click: function(){
+              $(this).css("background-color", "yellow");
+          }
+      });
+
+
+      $('#container button').click(function() {
+        console.log($(this).attr('id')); // button or this
+      });
+    });
+    </script>
+
+  </body>
+</html>

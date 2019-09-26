@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">jQuery </a></li>
+      </ul>
+    </div>
+
+    <h2 id="header">SET - jQuery</h2>
+
+    <p id="text1">texto exemplo</p>
+
+    <p id="text2">texto 2 original</p>
+
+    <div id="div1" class="my-div">my div</div>
+
+    <ul>
+      <li>
+        <a id="myLink" href="//uma.pt" target="_blank">UMa</a>
+      </li>
+      <li>
+        <a id="myLink2" href="//uma.pt" target="_blank">UMa 2</a>
+      </li>
+    </ul>
+
+    <script>
+    $(document).ready(function(){
+      // SETS
+      // texto de p
+      console.log($("#text2").text());
+      $("#text2").text("novo texto alterado "); // ou html('<span>Hello World!</span>')
+
+      // href e texto de link
+      $("#myLink").attr('href', "//visitmadeira.pt/");
+      $("#myLink").text("MADEIRA TURISMO");
+
+      // mudar class
+      $("div1").css("color", "#ccc");
+
+      $("#myLink2").attr('id', "newId");
+    });
+    </script>
+
+  </body>
+</html>

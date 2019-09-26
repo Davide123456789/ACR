@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">GET </a></li>
+        <li><a href="set.html">SET </a></li>
+        <li><a href="create.html">Create / remove</a></li>
+        <li><a href="classes.html">Style classes </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="exercises.html">Exercises </a></li>
+        <li><a href="#">DOM </a></li>
+      </ul>
+    </div>
+
+    <h2 id="header">EVENTS - DOM</h2>
+
+    <p id="text1">texto exemplo</p>
+
+    <p id="text2">texto 2 original</p>
+
+    <div class="my-div">my div</div>
+
+    <ul id="btns">
+      <li>
+        <button onclick="console.log('Hello World 1')">Click me (JS in html)</button>
+      </li>
+      <li>
+        <button id="myBtn2">Click me 2</button>
+      </li>
+      <li>
+        <button id="myBtn3">Click me 3</button>
+      </li>
+      <li>
+        <button id="myBtn4">Click me 4 (addEventListener)</button>
+      </li>
+    </ul>
+
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+
+    <script>
+    // EVENTS
+    // method 2
+    var btn2 = document.querySelector('#myBtn2');
+    btn2.onclick = function() {
+      return console.log("Hello World 2");
+    }
+
+    // method 2
+    var btn3 = document.querySelector('#myBtn3');
+    btn3.onclick = function(){
+      return console.log("Hello World 3");
+    }
+
+    // method 3
+    var btn4 = document.querySelector('#myBtn4');
+    btn4.addEventListener('click', function(ev) {
+      console.log("Hello World 4");
+      console.log(ev);
+      ev.target.style.background = 'yellow';
+    });
+
+
+    // Attaching listeners to groups of nodes
+    // buttons is a node list. It looks and acts much like an array.
+    const buttons = document.querySelectorAll('#container > button');
+
+    // we use the .forEach method to iterate through each button
+    buttons.forEach(function(button) {
+
+      // and for each one we add a 'click' listener
+      button.addEventListener('click', function () {
+        console.log(button.id); // button or this
+      });
+    });
+
+</script>
+
+  </body>
+</html>
